@@ -1,32 +1,101 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>My Website</title>
 
     <style>
-        body{
-            margin:0;
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            height:100vh;
-            background:#f5f5f5;
-            font-family:Arial, sans-serif;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        img{
-            width:300px;
-            max-width:90%;
-            border-radius:12px;
-            box-shadow:0 5px 15px rgba(0,0,0,.3);
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #191D23, #303747);
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 18px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            color: #191D23;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+
+        img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            display: block;
+            margin: auto;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        #error {
+            display: none;
+            color: #e53935;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        footer {
+            margin-top: 20px;
+            color: #777;
+            font-size: 13px;
         }
     </style>
 </head>
+
 <body>
 
-    <img src="https://kumarbuildspro.github.io/example-/leaf.jpg" alt="Leaf">
+    <div class="container">
+
+        <h1>My Image</h1>
+
+        <img
+            id="myImage"
+            src="https://kumarbuildspro.github.io/example-/leaf.jpg"
+            alt="Leaf Image"
+        >
+
+        <p id="error">
+            Image could not be loaded. Please check image URL.
+        </p>
+
+        <footer>
+            Created with HTML & CSS
+        </footer>
+
+    </div>
+
+    <script>
+        const image = document.getElementById("myImage");
+        const error = document.getElementById("error");
+
+        image.onerror = function() {
+            image.style.display = "none";
+            error.style.display = "block";
+        };
+    </script>
 
 </body>
 </html>
