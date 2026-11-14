@@ -9,12 +9,10 @@
 
     <!-- Website Favicon -->
     <link rel="icon" type="image/jpeg" href="./leaf.jpg">
-
-    <!-- Apple Touch Icon -->
     <link rel="apple-touch-icon" href="./leaf.jpg">
 
     <meta name="theme-color" content="#191D23">
-    <meta name="description" content="Welcome to KumarBuildsPro - My Image Website.">
+    <meta name="description" content="Welcome to KumarBuildsPro - Explore My Creative Digital World.">
 
     <style>
         * {
@@ -26,37 +24,64 @@
         body {
             min-height: 100vh;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
+            gap: 35px;
             background: linear-gradient(135deg, #191D23, #303747);
             font-family: Arial, sans-serif;
-            padding: 20px;
+            padding: 45px 18px;
         }
+
+        /* Top Heading */
+
+        .heading {
+            width: 100%;
+            max-width: 700px;
+            text-align: center;
+            color: white;
+        }
+
+        .heading h1 {
+            font-size: 32px;
+            margin-bottom: 14px;
+            font-weight: bold;
+        }
+
+        .heading p {
+            font-size: 17px;
+            color: #C7B3FF;
+            line-height: 1.6;
+        }
+
+        /* Main Image Card */
 
         .container {
             width: 100%;
-            max-width: 400px;
+            max-width: 560px;
             text-align: center;
             background: #ffffff;
-            padding: 25px;
-            border-radius: 18px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            padding: 35px;
+            border-radius: 22px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.35);
         }
 
-        h1 {
+        .container h2 {
             color: #191D23;
-            margin-bottom: 20px;
-            font-size: 28px;
+            margin-bottom: 25px;
+            font-size: 30px;
         }
+
+        /* Main Image */
 
         img {
             width: 100%;
-            max-width: 300px;
+            max-width: 460px;
             height: auto;
             display: block;
             margin: auto;
-            border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            border-radius: 14px;
+            box-shadow: 0 7px 20px rgba(0,0,0,0.22);
         }
 
         #error {
@@ -67,23 +92,84 @@
         }
 
         footer {
-            margin-top: 20px;
+            margin-top: 25px;
             color: #777;
-            font-size: 13px;
+            font-size: 14px;
         }
+
+        /* Bottom Text */
+
+        .bottom-text {
+            color: #C7B3FF;
+            text-align: center;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        /* Mobile Responsive */
+
+        @media (max-width: 600px) {
+
+            body {
+                gap: 28px;
+                padding: 45px 16px;
+            }
+
+            .heading h1 {
+                font-size: 26px;
+            }
+
+            .heading p {
+                font-size: 15px;
+            }
+
+            .container {
+                padding: 22px;
+                border-radius: 18px;
+            }
+
+            .container h2 {
+                font-size: 25px;
+                margin-bottom: 20px;
+            }
+
+            img {
+                max-width: 100%;
+            }
+
+            footer {
+                font-size: 12px;
+            }
+        }
+
     </style>
 </head>
 
 <body>
 
+    <!-- Top Heading -->
+
+    <div class="heading">
+
+        <h1>Welcome to KumarBuildsPro</h1>
+
+        <p>
+            Explore My Creative Digital World
+        </p>
+
+    </div>
+
+
+    <!-- Main Image Card -->
+
     <div class="container">
 
-        <h1>KumarBuildsPro</h1>
+        <h2>KumarBuildsPro</h2>
 
         <img
             id="myImage"
             src="./leaf.jpg"
-            alt="Leaf Image"
+            alt="Beautiful Yellow Leaf"
         >
 
         <p id="error">
@@ -92,19 +178,39 @@
         </p>
 
         <footer>
-            Created with HTML, CSS & JavaScript
+            Created with HTML & CSS
         </footer>
 
     </div>
 
+
+    <!-- Bottom Text -->
+
+    <div class="bottom-text">
+
+        <p>
+            Think Big. Create More. Keep Learning.
+        </p>
+
+    </div>
+
+
+    <!-- JavaScript -->
+
     <script>
+
         const image = document.getElementById("myImage");
+
         const error = document.getElementById("error");
 
         image.onerror = function() {
+
             image.style.display = "none";
+
             error.style.display = "block";
+
         };
+
     </script>
 
 </body>
